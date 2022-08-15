@@ -2,36 +2,39 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func main() {
+	// x := 0
 
-	// greetings := "Halo teman-teman semua"
+	// // Looping While
+	// for x < 5 {
+	// 	fmt.Println("Nilai x adalah:", x)
+	// 	x++
+	// }
 
-	// fmt.Println(strings.Contains(greetings, "Halo"))          // Mencari kata tertentu dalam kalimat
-	// fmt.Println(strings.ReplaceAll(greetings, "Halo", "Hai")) // Mengembalikan string baru yang sudah diubah sesuai dengan yang digantikan
-	// fmt.Println(strings.ToUpper(greetings))
-	// fmt.Println(strings.Index(greetings, "t"))
-	// fmt.Println(strings.Split(greetings, " "))
+	// Traditional For Loop
+	// for i := 0; i < 5; i++ {
+	// 	fmt.Println("Nilai i adalah:", i)
+	// }
 
-	// // Original
-	// fmt.Println("Yang original adalah", greetings)
+	names := []string{"mario", "luigi", "toni", "chopper", "drag"}
 
-	ages := []int{45, 20, 21, 65, 87, 23, 44, 56, 67, 30}
+	// for i := 0; i < len(names); i++ {
+	// 	fmt.Println(names[i])
+	// }
 
-	sort.Ints(ages)
-	fmt.Println(ages)
+	// loooping pada variabel names (getting the index and the value)
+	for index, value := range names {
+		fmt.Printf("Posisinya ada pada index %v dengan nilainya adalah %v \n", index, value)
+	}
 
-	// Searching the integers
-	index := sort.SearchInts(ages, 30)
-	fmt.Println(index)
+	// Jika tidak ingin menggunakan index atau value bisa diganti dengan _
+	for _, value := range names {
+		fmt.Printf("Nilainya adalah %v \n", value)
+		value = "string baru"
+	}
 
-	names := []string{"yoyo", "nono", "momo", "dragon", "ball"}
-
-	sort.Strings(names)
+	// Value tidak akan ke update (originalnya) karena itu seperti cuma variabel lokal di dalam looping itu saja
 	fmt.Println(names)
-
-	// Searching the slices (strings)
-	fmt.Println(sort.SearchStrings(names, "ball"))
 }
