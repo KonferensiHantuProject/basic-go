@@ -3,41 +3,27 @@ package main
 import "fmt"
 
 func main() {
+	name := "Bone"
+	age := 41
 
-	// Strings
-	var nameOne string = "Nama"
-	var nameTwo = "Luigi"
-	var nameThree string
+	// Print
+	fmt.Print("Halo, \n")
+	fmt.Print("Dunia \n")
+	fmt.Print("Baris Baru")
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+	// Otomatis line baru (Println)
+	fmt.Println("Halo Bone")
+	fmt.Println("Dadah Bone")
+	fmt.Println("Umurku adalah", age, "dan namaku adalah", name)
 
-	// Updating Value of variable
-	nameOne = "Nama Update"
-	nameThree = "Update"
+	// Foramatting string (Printf) %_ = format specifier
+	fmt.Printf("Umurku adalah %v dan namaku adalah %v \n", age, name)
+	fmt.Printf("Umurku adalah %q dan namaku adalah %q \n", age, name)
+	fmt.Printf("Umurku bertipe %T \n", age)
+	fmt.Printf("Kamu mendapat skor %f poin \n", 55.5)
+	fmt.Printf("Kamu mendapat skor %0.2f poin \n", 55.5) // Membatasi jumlah angka di belakang koma
 
-	fmt.Println(nameOne, nameTwo, nameThree)
-
-	// Deklarasi variabel di awal dan tidak bisa digunakan diluar function
-	nameFour := "yosha"
-
-	fmt.Println(nameOne, nameTwo, nameThree, nameFour)
-
-	// Numbers (Integer and decimal)
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// Bits dan memories (uint tidak menerima negatif)
-	// var numOne int8 = 25
-	// var numTwo int8 = -128
-	// var numThree uint16 = 2556
-
-	// Float (memiliki desimal)
-	var scoreOne float32 = 25.98
-	var scoreTwo float64 = 893821948298498234983948398.9
-	scoreThree := 1.5
-
-	fmt.Println(scoreOne, scoreTwo, scoreThree)
+	// Sprintf (Menyimpan string yang sudah di format)
+	var str = fmt.Sprintf("Umurku adalah %v dan namaku adalah %v \n", age, name)
+	fmt.Println("String yang di simpan adalah", str)
 }
