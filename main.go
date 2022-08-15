@@ -1,33 +1,37 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 
-	// Membuat array (dalam go array punya length yang fixed)
-	// var ages [3]int = [3]int{20, 25, 30}
-	var agesSecond = [3]int{20, 25, 30}
+	// greetings := "Halo teman-teman semua"
 
-	names := [4]string{"Boni", "Mario", "Bobi", "Bobon"}
-	names[1] = "Hartanto"
+	// fmt.Println(strings.Contains(greetings, "Halo"))          // Mencari kata tertentu dalam kalimat
+	// fmt.Println(strings.ReplaceAll(greetings, "Halo", "Hai")) // Mengembalikan string baru yang sudah diubah sesuai dengan yang digantikan
+	// fmt.Println(strings.ToUpper(greetings))
+	// fmt.Println(strings.Index(greetings, "t"))
+	// fmt.Println(strings.Split(greetings, " "))
 
-	fmt.Println(agesSecond, len(agesSecond))
-	fmt.Println(names, len(names))
+	// // Original
+	// fmt.Println("Yang original adalah", greetings)
 
-	// Slice bisa di manipulasi
-	var scores = []int{31, 45, 150}
-	scores[2] = 12
+	ages := []int{45, 20, 21, 65, 87, 23, 44, 56, 67, 30}
 
-	// Menggunakan append untuk menambah isi slice
-	scores = append(scores, 66)
-	fmt.Println(scores)
+	sort.Ints(ages)
+	fmt.Println(ages)
 
-	// Slice ranges (yang kedua tidak akan diambil)
-	rangeOne := names[1:3]
-	rangeTwo := names[2:]
-	rangeThree := names[:3]
-	fmt.Println(rangeOne, rangeTwo, rangeThree)
+	// Searching the integers
+	index := sort.SearchInts(ages, 30)
+	fmt.Println(index)
 
-	rangeOne = append(rangeOne, "Dodi")
-	fmt.Println(rangeOne)
+	names := []string{"yoyo", "nono", "momo", "dragon", "ball"}
+
+	sort.Strings(names)
+	fmt.Println(names)
+
+	// Searching the slices (strings)
+	fmt.Println(sort.SearchStrings(names, "ball"))
 }
