@@ -1,3 +1,3 @@
-# basic-go
+# Basic Go
 
 Disini akan ditunjukkan dasar-dasar dalam menggunakan go
